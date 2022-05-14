@@ -1,5 +1,5 @@
 <template>
-  <v-img :src="logo" contain height="200" />
+  <v-img :src="logo" contain height="150" />
 </template>
 <script>
 import logo from '../assets/logo-light.svg'
