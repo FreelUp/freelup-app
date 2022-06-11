@@ -5,8 +5,8 @@ export default {
     install(app, options) {
         app.component('AppLoading', AppLoading)
         app.config.globalProperties.$loading = {
-            show: (msg) => {
-                Store.dispatch("loading/show", msg)
+            open: (msg) => {
+                Store.dispatch("loading/open", msg)
             },
             close: () => {
                 Store.dispatch("loading/close")

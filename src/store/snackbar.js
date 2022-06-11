@@ -3,17 +3,17 @@ export default {
     state() {
       return {
         show: false,
-        message: "Carregando...",
+        text: "Mensagem padrão"
       };
     },
     actions: {
-      open({ state }, msg) {
+      open({ state }, text) {
         state.show = true;
-        state.message = msg;
+        state.text = text;
       },
       close({ state }) {
         state.show = false;
-        state.message = "";
+        state.text = "";
       },
     },
   };

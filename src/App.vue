@@ -1,6 +1,7 @@
 <template>
   <v-app :theme="theme">
     <app-loading></app-loading>
+    <app-snackbar></app-snackbar>
     <div class="d-flex justify-end">
       <v-btn flat :icon="themeIcon" @click="toggleTheme"></v-btn>
     </div>
