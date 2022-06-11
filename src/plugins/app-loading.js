@@ -6,10 +6,10 @@ export default {
         app.component('AppLoading', AppLoading)
         app.config.globalProperties.$loading = {
             show: (msg) => {
-                Store.dispatch("showLoading", msg)
+                Store.dispatch("loading/show", msg)
             },
             close: () => {
-                Store.dispatch("hideLoading")
+                Store.dispatch("loading/close")
             },
         }
     }

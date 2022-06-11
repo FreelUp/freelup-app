@@ -1,8 +1,8 @@
 <template>
-  <v-dialog v-model="$store.state.loadingShow" hide-overlay persistent>
+  <v-dialog v-model="$store.state.loading.show" hide-overlay persistent>
     <v-card color="primary">
       <v-card-text>
-        {{ $store.state.loadingMessage }}
+        {{ $store.state.loading.message }}
         <v-progress-linear
           indeterminate
           color="white"

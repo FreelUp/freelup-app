@@ -64,20 +64,22 @@ export default {
   },
   methods: {
     async create() {
-      const validate = await this.$refs["form"].validate();
-      if (validate.valid) {
-        try {
           this.$loading.show("Por favor aguarde...")
-          await UserAPI.create(this.user);
-          this.$router.push("/home");
-        } catch (error) {
-          alert("Erro ao salvar usuário");
-        } finally {
-          this.$loading.close()
-        }
-      } else {
-        alert("Formulário contém erros");
-      }
+
+      // const validate = await this.$refs["form"].validate();
+      // if (validate.valid) {
+      //   try {
+      //     this.$loading.show("Por favor aguarde...")
+      //     await UserAPI.create(this.user);
+      //     this.$router.push("/home");
+      //   } catch (error) {
+      //     alert("Erro ao salvar usuário");
+      //   } finally {
+      //     this.$loading.close()
+      //   }
+      // } else {
+      //   alert("Formulário contém erros");
+      // }
     },
   },
 };
