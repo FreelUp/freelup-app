@@ -1,5 +1,6 @@
 import Login from "./../pages/Login.vue"
 import Register from "./../pages/Register.vue"
+import Home from "./../pages/Home.vue"
 
 export default [
     {
@@ -9,5 +10,9 @@ export default [
     {
         path: "/register",
         component: Register
+    },
+    {
+        path: "/home",
+        component: Home
     }
 ]

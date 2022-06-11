@@ -48,6 +48,7 @@
 <script>
 import AppLogo from "../components/AppLogo.vue";
 import AppBtn from "../components/AppBtn.vue";
+import UserAPI from "../api/UserApi";
 import rules from "../datas/rules";
 
 export default {
@@ -64,7 +65,16 @@ export default {
   methods: {
     async create() {
       const validate = await this.$refs["form"].validate()
-      console.log(validate.valid);
+      if(validate.valid) {
+        try {
+          await UserAPI.create(this.user)
+          this.$router.push("/home")
+        } catch (error) {
+          alert("Erro ao salvar usuário")
+        }
+      } else {
+        alert("Formulário contém erros")
+      }
     },
   },
 };
