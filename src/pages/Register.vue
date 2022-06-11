@@ -64,16 +64,19 @@ export default {
   },
   methods: {
     async create() {
-      const validate = await this.$refs["form"].validate()
-      if(validate.valid) {
+      const validate = await this.$refs["form"].validate();
+      if (validate.valid) {
         try {
-          await UserAPI.create(this.user)
-          this.$router.push("/home")
+          this.$loading.show("Por favor aguarde...")
+          await UserAPI.create(this.user);
+          this.$router.push("/home");
         } catch (error) {
-          alert("Erro ao salvar usuário")
+          alert("Erro ao salvar usuário");
+        } finally {
+          this.$loading.close()
         }
       } else {
-        alert("Formulário contém erros")
+        alert("Formulário contém erros");
       }
     },
   },
