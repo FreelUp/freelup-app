@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import AppBtn from './components/AppBtn.vue'
+import AppLogo from './components/AppLogo.vue'
 import vuetify from './plugins/vuetify'
 import vuex from './plugins/vuex'
 import router from "./plugins/vue-router"
@@ -15,4 +17,6 @@ createApp(App)
   .use(vuetify)
   .use(loading)
   .use(snackbar)
+  .component('AppBtn', AppBtn)
+  .component('AppLogo', AppLogo)
   .mount('#app')

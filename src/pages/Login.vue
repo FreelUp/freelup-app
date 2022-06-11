@@ -31,14 +31,6 @@
     </v-col>
   </v-row>
 </template>
-<script>
-import AppLogo from "./../components/AppLogo.vue";
-import AppBtn from "./../components/AppBtn.vue";
 
-export default {
-  components: {
-    AppLogo,
-    AppBtn,
-  },
-};
+<script>
 </script>

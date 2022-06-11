@@ -46,16 +46,10 @@
   </v-row>
 </template>
 <script>
-import AppLogo from "../components/AppLogo.vue";
-import AppBtn from "../components/AppBtn.vue";
 import UserAPI from "../api/UserApi";
 import rules from "../datas/rules";
 
 export default {
-  components: {
-    AppLogo,
-    AppBtn,
-  },
   data: () => {
     return {
       user: {},
