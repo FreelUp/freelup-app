@@ -39,7 +39,6 @@
 </template>
 
 <script>
-import UserAPI from "../api/UserApi";
 import rules from "../datas/rules";
 
 export default {
@@ -53,8 +52,7 @@ export default {
       if (validate.valid) {
         try {
           this.$loading.open("Por favor aguarde...")
-          const result = await UserAPI.login(this.user);
-          console.log(result);
+          await this.$store.dispatch("user/login", this.user)
           this.$router.push("/home");
         } catch (error) {
           console.log(error);

@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import AppBtn from './components/AppBtn.vue'
-import AppLogo from './components/AppLogo.vue'
+import AppBtn from './components/general/AppBtn.vue'
+import AppLogo from './components/general/AppLogo.vue'
 import vuetify from './plugins/vuetify'
 import vuex from './plugins/vuex'
 import router from "./plugins/vue-router"

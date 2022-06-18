@@ -1,9 +1,13 @@
-import loading from "./loading"
+import loading from "./loading";
 import snackbar from "./snackbar";
+import drawer from "./drawer";
+import user from "./user";
 
 export default {
-    modules: {
-        loading,
-        snackbar
-    }
+  modules: {
+    loading,
+    snackbar,
+    drawer,
+    user,
+  },
 };

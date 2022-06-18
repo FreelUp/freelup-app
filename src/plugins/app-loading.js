@@ -1,4 +1,4 @@
-import AppLoading from "../components/AppLoading.vue";
+import AppLoading from "../components/general/AppLoading.vue";
 import Store from "./vuex"
 
 export default {

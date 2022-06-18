@@ -1,5 +1,7 @@
 <template>
   <v-app :theme="theme">
+    <app-navbar v-if="!$route.meta.hideNavbar"></app-navbar>
+    <app-drawer></app-drawer>
     <app-loading></app-loading>
     <app-snackbar></app-snackbar>
     <div class="d-flex justify-end">
@@ -13,6 +15,8 @@
 
 <script setup>
 import { ref } from "vue";
+import AppNavbar from "./components/general/AppNavbar.vue";
+import AppDrawer from "./components/general/AppDrawer.vue";
 
 const theme = ref("theme");
 theme.value = "light";

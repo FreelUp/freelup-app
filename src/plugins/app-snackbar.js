@@ -1,4 +1,4 @@
-import AppSnackbar from "../components/AppSnackbar.vue";
+import AppSnackbar from "../components/general/AppSnackbar.vue";
 import Store from "./vuex"
 
 export default {
