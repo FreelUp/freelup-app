@@ -6,6 +6,7 @@
     :class="{ 'button-raised': !text }"
     :block="block"
     :size="size"
+    :variant="variant"
     elevation="0"
   >
     <slot></slot>
@@ -37,8 +38,8 @@ export default {
   },
   computed: {
     variant() {
-      // if(this.text) return "text"
-      return "raised"
+      if(this.text) return "text"
+      return "contained"
     }
   },
   mounted() {
