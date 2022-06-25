@@ -1,10 +1,10 @@
 <template>
   <v-navigation-drawer v-model="$store.state.drawer.show" bottom temporary>
     <v-list>
+      <!-- prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg" -->
       <v-list-item
-        prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
-        :title="$store.state.user.loggedUser.name"
-        :subtitle="$store.state.user.loggedUser.email"
+        :title="loggedUser.name"
+        :subtitle="loggedUser.email"
       ></v-list-item>
     </v-list>
 
@@ -18,6 +18,8 @@
   </v-navigation-drawer>
 </template>
 <script>
+import { mapActions, mapState } from "vuex";
+
 export default {
   data: () => ({
     group: null,
@@ -40,7 +42,17 @@ export default {
       },
     ],
   }),
-
+  methods: {
+    ...mapActions({
+      recoverLoggedUser: "user/recoverLoggedUser",
+    }),
+  },
+  mounted() {
+    this.recoverLoggedUser();
+  },
+  computed: {
+    ...mapState("user", ["loggedUser"]),
+  },
   watch: {
     group() {
       this.$store.dispatch("drawer/close");
