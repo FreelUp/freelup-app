@@ -4,6 +4,7 @@ import Home from "./../pages/Home.vue";
 
 export default [
   {
+    name: "Login",
     path: "/",
     component: Login,
     meta: {
@@ -11,6 +12,7 @@ export default [
     },
   },
   {
+    name: "Register",
     path: "/register",
     component: Register,
     meta: {
@@ -18,7 +20,11 @@ export default [
     },
   },
   {
+    name: "Home",
     path: "/home",
     component: Home,
+    meta: {
+      requiresAuth: true
+    }
   },
 ];

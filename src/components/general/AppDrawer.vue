@@ -13,7 +13,7 @@
 
     <v-divider></v-divider>
     <v-list>
-      <v-list-item title="Sair" to="/"></v-list-item>
+      <v-list-item title="Sair" @click="logout"></v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -45,7 +45,12 @@ export default {
   methods: {
     ...mapActions({
       recoverLoggedUser: "user/recoverLoggedUser",
+      removeLoggedUser: "user/logout",
     }),
+    logout() {
+      this.removeLoggedUser();
+      this.$router.push({ name: "Login" });
+    },
   },
   mounted() {
     this.recoverLoggedUser();
