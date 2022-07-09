@@ -48,6 +48,7 @@
 <script>
 import UserAPI from "../api/UserApi";
 import rules from "../datas/rules";
+import { getErrorMessage } from "./../utils/error.util"
 
 export default {
   data: () => {
@@ -66,7 +67,7 @@ export default {
           this.$router.push("/home");
           this.$snackbar.open("Usuário cadastrado com sucesso!")
         } catch (error) {
-          alert("Erro ao salvar usuário");
+          this.$snackbar.open(getErrorMessage(error));
         } finally {
           this.$loading.close()
         }
