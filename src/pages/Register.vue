@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     async create() {
-      const validate = await this.$refs["form"].validate();
+      const validate = await this.$refs.form.validate();
       if (validate.valid) {
         try {
           this.$loading.open("Por favor aguarde...")

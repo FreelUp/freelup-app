@@ -1,6 +1,8 @@
 import Login from "./../pages/Login.vue";
 import Register from "./../pages/Register.vue";
 import Home from "./../pages/Home.vue";
+import ForgotPassword from "../pages/ForgotPassword.vue";
+import ChangePassword from "../pages/ChangePassword.vue";
 
 export default [
   {
@@ -24,7 +26,23 @@ export default [
     path: "/home",
     component: Home,
     meta: {
-      requiresAuth: true
-    }
+      requiresAuth: true,
+    },
+  },
+  {
+    name: "ForgotPassword",
+    path: "/forgot-password",
+    component: ForgotPassword,
+    meta: {
+      hideNavbar: true,
+    },
+  },
+  {
+    name: "ChangePassword",
+    path: "/change-password",
+    component: ChangePassword,
+    meta: {
+      hideNavbar: true,
+    },
   },
 ];

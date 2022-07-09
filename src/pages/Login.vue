@@ -34,6 +34,11 @@
           >Criar minha conta</app-btn
         >
       </div>
+      <div class="d-flex justify-center mt-5">
+        <app-btn size="x-large" to="/forgot-password" block text
+          >Esqueci minha senha</app-btn
+        >
+      </div>
     </v-col>
   </v-row>
 </template>
