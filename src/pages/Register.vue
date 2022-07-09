@@ -64,6 +64,7 @@ export default {
         try {
           this.$loading.open("Por favor aguarde...")
           await UserAPI.create(this.user);
+          await this.$store.dispatch("user/login", this.user)
           this.$router.push("/home");
           this.$snackbar.open("Usuário cadastrado com sucesso!")
         } catch (error) {
