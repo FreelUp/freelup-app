@@ -1,4 +1,4 @@
-import UserAPI from "../api/UserApi";
+import UserAPI from "./../api/UserAPI";
 import { getErrorMessage } from "./../utils/error.util";
 
 export default {
