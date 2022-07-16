@@ -36,4 +36,28 @@ export default class UserAPI {
       throw error;
     }
   }
+
+  static async verifyChangePasswordToken(token) {
+    try {
+      const response = await axios.get(
+        import.meta.env.VITE_API_URL + "/forgot-password?token=" + token
+      );
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async changePassword(token, newPassword) {
+    try {
+      const response = await axios.put(
+        import.meta.env.VITE_API_URL + "/forgot-password",
+        {
+          token: token,
+          password: newPassword,
+        }
+      );
+    } catch (error) {
+      throw error;
+    }
+  }
 }

@@ -28,7 +28,9 @@
         </v-row>
       </v-form>
       <div class="d-flex justify-center">
-        <app-btn @click="" size="x-large" block>Confirmar</app-btn>
+        <app-btn @click="changePassword" size="x-large" block
+          >Confirmar</app-btn
+        >
       </div>
       <div class="d-flex justify-center mt-5">
         <app-btn size="x-large" to="/" block text>Voltar</app-btn>
@@ -46,10 +48,37 @@ export default {
     confirmPassword: "",
     token: "",
   }),
-  mounted() {
+  methods: {
+    async changePassword() {
+      console.log("Trocar senha");
+      if (this.password != this.confirmPassword)
+        return this.$snackbar.open("As duas senhas devem ser iguais");
+      try {
+        await this.$store.dispatch("user/changePassword", {
+          token: this.token,
+          newPassword: this.password,
+        });
+        this.$snackbar.open("Senha atualizada com sucesso!");
+        this.$router.push({ name: "Login" });
+      } catch (error) {
+        this.$snackbar.open(error.message);
+      }
+    },
+  },
+  async mounted() {
     this.token = this.$route.query.token;
     if (!this.token) {
       this.$router.push({ name: "ForgotPassword" });
+    } else {
+      try {
+        await this.$store.dispatch(
+          "user/verifyChangePasswordToken",
+          this.token
+        );
+      } catch (error) {
+        this.$snackbar.open(error.message);
+        this.$router.push({ name: "ForgotPassword" });
+      }
     }
   },
 };

@@ -61,7 +61,7 @@ export default {
           this.$router.push("/home");
         } catch (error) {
           console.log(error);
-          alert("Erro ao entrar");
+          this.$snackbar.open(error.message)
         } finally {
           this.$loading.close()
         }
