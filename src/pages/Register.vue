@@ -46,7 +46,7 @@
   </v-row>
 </template>
 <script>
-import UserAPI from "../api/UserApi";
+import UserAPI from "./../api/UserApi";
 import rules from "../datas/rules";
 import { getErrorMessage } from "./../utils/error.util"
 
